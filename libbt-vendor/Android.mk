@@ -31,7 +31,8 @@ LOCAL_SRC_FILES := \
         src/bt_vendor_persist.cpp
 
 #Disable this flag in case if FM over UART support not needed
-LOCAL_CFLAGS := -DFM_OVER_UART
+# AP: disable this flas as it is using QCOM BT extension that is not defined in system/bt/hci/include
+#LOCAL_CFLAGS := -DFM_OVER_UART
 
 ifneq (,$(filter userdebug eng,$(TARGET_BUILD_VARIANT)))
 LOCAL_CFLAGS += -DPANIC_ON_SOC_CRASH
@@ -40,7 +41,6 @@ endif
 
 LOCAL_C_INCLUDES += \
         $(LOCAL_PATH)/include \
-        external/bluetooth/bluedroid/hci/include \
         system/bt/hci/include \
         $(TARGET_OUT_HEADERS)/bt/hci_qcomm_init \
         $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
