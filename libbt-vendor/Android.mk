@@ -83,6 +83,7 @@ ifneq ($(BOARD_ANT_WIRELESS_DEVICE),)
 LOCAL_CFLAGS += -DENABLE_ANT
 endif
 #LOCAL_CFLAGS += -DREAD_BT_ADDR_FROM_PROP
+LOCAL_CFLAGS += -Wno-error
 
 #include $(LOCAL_PATH)/vnd_buildcfg.mk
 
