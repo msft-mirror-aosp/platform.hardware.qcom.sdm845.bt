@@ -44,7 +44,7 @@ endif
 LOCAL_C_INCLUDES += \
         $(LOCAL_PATH)/include \
         external/bluetooth/bluedroid/hci/include \
-        system/bt/hci/include \
+        packages/modules/Bluetooth/system/hci/include \
         $(TARGET_OUT_HEADERS)/bt/hci_qcomm_init \
         $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
 
@@ -66,6 +66,9 @@ LOCAL_SHARED_LIBRARIES := \
         libbtnv
 
 LOCAL_MODULE := libbt-vendor
+LOCAL_LICENSE_KINDS := SPDX-license-identifier-Apache-2.0 SPDX-license-identifier-BSD legacy_not_a_contribution
+LOCAL_LICENSE_CONDITIONS := by_exception_only not_allowed notice
+LOCAL_NOTICE_FILE := $(LOCAL_PATH)/NOTICE
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_OWNER := qcom
